@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtalaver <gtalaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:49:14 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/15 17:49:15 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/15 20:32:03 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
+
+void	ft_putstr(char *s)
+{
+	while(*s && *s != '\n')
+		write(1, s++, 1);
+}

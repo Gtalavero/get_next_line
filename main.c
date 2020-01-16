@@ -3,26 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gtalaver <gtalaver@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:10:39 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/15 17:45:05 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/15 20:15:44 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "get_next_line.h"
 
 int	main()
 {
-	char	buf[4096];
 	int		fd;
+	char	*line[5];
 
+	
 	fd = open("text.txt", O_RDONLY);
-	read(fd, buf, 1025);
-	printf("%s", buf);
+	get_next_line(fd, line);
 	close(fd);
 }
