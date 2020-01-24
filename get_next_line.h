@@ -6,22 +6,26 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:49:09 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/15 20:30:43 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/24 20:34:28 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#define BUFFER_SIZE 40
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 2 //cambiar a 20
+#endif
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <stdio.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 #include <stdlib.h>
 
-int		get_next_line(int fd, char **line);
-void	ft_putstr(char *s);
+size_t		ft_strlen(const char *str);
+char		*ft_strchr(const char *s, int c);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strdup(char *s);
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+int			get_next_line(int fd, char **line);
 #endif
