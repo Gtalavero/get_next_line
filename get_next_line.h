@@ -6,7 +6,7 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:49:09 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/24 20:34:28 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/25 21:53:21 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 2 //cambiar a 20
+# define BUFFER_SIZE 20
 #endif
 
 #include <unistd.h>

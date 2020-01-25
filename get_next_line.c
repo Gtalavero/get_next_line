@@ -6,7 +6,7 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:48:27 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/24 20:30:03 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/25 21:53:08 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int get_next_line(int fd, char **line)
 	static char	*auxfd[4096];
 	char		*buff;
 	int			reader;
-	
+
 	if(fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
 	if(!(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
@@ -44,12 +44,14 @@ int get_next_line(int fd, char **line)
 			auxfd[fd] = ft_strdup(buff); // Si no hay nada en auxfd, lo llenamos con buff
 	}
 	while((reader = read(fd, buff, BUFFER_SIZE)) > 0 &&
-							!(ft_strchr(auxfd[fd], '\n')))	//¿Quitar BUFFER_SIZE? Guarda en buff. read: Nº carácteres, fallo lectura = -1, EOF = 0, 
+							!(ft_strchr(auxfd[fd], '\n')))
 	{
 		buff[reader] = '\0';  //¿quitarlo?
 		auxfd[fd] = ft_strjoin(auxfd[fd], buff);	// Si auxfd tenía contenido, lo concatenamos con buff
 	}
 	free(buff);
+	//En este punto, hemos guardado en auxfd la primera linea
+
 	if(reader < 0)
 		return (-1);
 	if(reader == 0)
@@ -57,6 +59,5 @@ int get_next_line(int fd, char **line)
 		*line = ft_strdup("");
 		return (0);
 	}
-	//PENDIENTE retornamos len (0 o 1) en funcion de lo que retorne ft_line, 1 si hemos leido una linea, 0 si hemos terminado de leer.
 	return(0);
 }
