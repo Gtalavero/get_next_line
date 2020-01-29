@@ -6,12 +6,40 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:48:27 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/25 21:53:08 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/29 15:43:38 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+// Recibiremos un auxfd que podria continuar despues del \n, por lo que tendremos
+// que limpiarlo y almacenar en line hasta el \n.
+static char		*ft_saveline(char *auxfd, char **line)
+{
+	// Almacenar en line el contenido de auxfd hasta el salto de linea.
+	// Limpiar auxfd
+	int		i;
+	char	*temp; //tamanio?
+
+	i = 0;
+	// Contamos los caracteres de auxfd hasta el \n.
+	while(auxfd[i] && auxfd[i] != '\n')
+		i++;
+	if(auxfd[i] == '\n')
+	{
+		*line = ft_substr(auxfd, 0, i);
+		temp = ft_strdup(auxfd + i + 1);
+		free(auxfd);
+		auxfd = temp;
+		// free(temp);
+	}
+	else
+	{
+		*line = ft_strjoin(*line, ft_substr(auxfd, 0, i));
+	}
+
+	return (auxfd);
+}
 /*
 ** The get_next_line function reads a file and returns the line ending with a
 ** newline character from a file descriptor. A static variable is used, so that
@@ -38,20 +66,18 @@ int get_next_line(int fd, char **line)
 		return (-1);
 	if(!(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
 		return (-1);
-	if((reader = read(fd, buff, BUFFER_SIZE)) > 0)
+	while((reader = read(fd, buff, BUFFER_SIZE)) > 0 )
 	{
-			buff[reader] = '\0';
+		buff[reader] = '\0';
+		if(auxfd[fd] == NULL)
 			auxfd[fd] = ft_strdup(buff); // Si no hay nada en auxfd, lo llenamos con buff
-	}
-	while((reader = read(fd, buff, BUFFER_SIZE)) > 0 &&
-							!(ft_strchr(auxfd[fd], '\n')))
-	{
-		buff[reader] = '\0';  //¿quitarlo?
-		auxfd[fd] = ft_strjoin(auxfd[fd], buff);	// Si auxfd tenía contenido, lo concatenamos con buff
+		else
+			auxfd[fd] = ft_strjoin(auxfd[fd], buff);	// Si auxfd tenía contenido, lo concatenamos con buff
+		if (ft_strchr(auxfd[fd], '\n'))
+			break;
 	}
 	free(buff);
 	//En este punto, hemos guardado en auxfd la primera linea
-
 	if(reader < 0)
 		return (-1);
 	if(reader == 0)
@@ -59,5 +85,8 @@ int get_next_line(int fd, char **line)
 		*line = ft_strdup("");
 		return (0);
 	}
-	return(0);
+	ft_saveline(auxfd[fd], line);
+
+	return(reader);
 }
+// GIT

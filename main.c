@@ -6,7 +6,7 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:10:39 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/24 19:43:22 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/28 18:22:14 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int		main()
 	int		fd;
 	char	*line;
 	fd = open("text.txt", O_RDONLY);
-	while ((get_next_line(fd, &line)) == 1)
+	while ((get_next_line(fd, &line)) > 0)
 	{
-		// printf("[%d] %s\n", i++, line);
+		printf("<<<%s>>>\n", line);
 	}
 	close(fd);
 	return (0);
