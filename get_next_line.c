@@ -6,40 +6,12 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:48:27 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/29 17:55:23 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/29 19:27:52 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// Recibiremos un auxfd que podria continuar despues del \n, por lo que tendremos
-// que limpiarlo y almacenar en line hasta el \n.
-static char		*ft_saveline(char *auxfd, char **line)
-{
-	// Almacenar en line el contenido de auxfd hasta el salto de linea.
-	// Limpiar auxfd
-	int		i;
-	char	*temp; //tamanio?
-
-	i = 0;
-	// Contamos los caracteres de auxfd hasta el \n.
-	while(auxfd[i] && auxfd[i] != '\n')
-		i++;
-	if(auxfd[i] == '\n')
-	{
-		*line = ft_substr(auxfd, 0, i);
-		temp = ft_strdup(auxfd + i + 1);
-		free(auxfd);
-		auxfd = temp;
-		// free(temp);
-	}
-	else
-	{
-		*line = ft_strjoin(*line, ft_substr(auxfd, 0, i));
-	}
-
-	return (auxfd);
-}
 /*
 ** The get_next_line function reads a file and returns the line ending with a
 ** newline character from a file descriptor. A static variable is used, so that
@@ -55,6 +27,36 @@ static char		*ft_saveline(char *auxfd, char **line)
 ** a newline is encountered. Finally, we call output function to check what
 ** should be returned.
 */
+static char		*ft_saveline(char *auxfd, char **line, int *reader)
+{
+	int		i;
+	char	*temp;
+
+	i = 0;
+	while(auxfd[i] && auxfd[i] != '\n')
+		i++;
+	if(auxfd[i] == '\n')
+	{
+		*line = ft_substr(auxfd, 0, i);
+		temp = ft_strdup(auxfd + i + 1);
+		free(auxfd);
+		auxfd = temp;
+		if(auxfd[0] == '\0')
+		{
+			free(auxfd);
+			auxfd = NULL;
+		}
+		*reader = 1;
+	}
+	else
+	{
+		*line = ft_strjoin(*line, ft_substr(auxfd, 0, i));
+		free(auxfd);
+		auxfd = NULL;
+		*reader = 0;
+	}
+	return (auxfd);
+}
 
 int get_next_line(int fd, char **line)
 {
@@ -78,12 +80,16 @@ int get_next_line(int fd, char **line)
 	}
 	free(buff);
 	if(reader < 0)
+	{
 		return (-1);
-	if(reader == 0)
+		*line = ft_strdup("");
+	}
+	if(reader == 0 && auxfd[fd] == NULL)
 	{
 		*line = ft_strdup("");
 		return (0);
 	}
-	auxfd[fd] = ft_saveline(auxfd[fd], line);
+	auxfd[fd] = ft_saveline(auxfd[fd], line, &reader);
 	return(reader);
 }
+//Tema errores
