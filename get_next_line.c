@@ -6,7 +6,7 @@
 /*   By: gtalaver <gtalaver@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:48:27 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/29 15:43:38 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/29 17:55:23 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,13 @@ int get_next_line(int fd, char **line)
 	{
 		buff[reader] = '\0';
 		if(auxfd[fd] == NULL)
-			auxfd[fd] = ft_strdup(buff); // Si no hay nada en auxfd, lo llenamos con buff
+			auxfd[fd] = ft_strdup(buff);
 		else
-			auxfd[fd] = ft_strjoin(auxfd[fd], buff);	// Si auxfd tenía contenido, lo concatenamos con buff
+			auxfd[fd] = ft_strjoin(auxfd[fd], buff);
 		if (ft_strchr(auxfd[fd], '\n'))
 			break;
 	}
 	free(buff);
-	//En este punto, hemos guardado en auxfd la primera linea
 	if(reader < 0)
 		return (-1);
 	if(reader == 0)
@@ -85,8 +84,6 @@ int get_next_line(int fd, char **line)
 		*line = ft_strdup("");
 		return (0);
 	}
-	ft_saveline(auxfd[fd], line);
-
+	auxfd[fd] = ft_saveline(auxfd[fd], line);
 	return(reader);
 }
-// GIT
