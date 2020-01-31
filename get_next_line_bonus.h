@@ -6,7 +6,7 @@
 /*   By: gtalaver <gtalaverodev@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:49:09 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/31 19:13:52 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/31 19:57:45 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 size_t		ft_strlen(const char *str);
 char		*ft_strchr(const char *s, int c);
-char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strjoin(char *s1, char *s2);
 char		*ft_strdup(char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			get_next_line(int fd, char **line);

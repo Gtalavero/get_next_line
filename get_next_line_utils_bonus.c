@@ -6,7 +6,7 @@
 /*   By: gtalaver <gtalaverodev@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:49:14 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/31 19:13:58 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/31 20:16:13 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,33 @@ char		*ft_strchr(const char *s, int c)
 ** Returns a new string result of the concatenation of 's1' and 's2'
 */
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char *s1, char *s2)
 {
-	char	*s;
-	int		i;
+	char	*dst;
+	int		x;
+	int		y;
 
-	i = 0;
+	x = 0;
+	y = 0;
 	if (!s1 || !s2)
-		return (0);
-	if (!(s = (char*)malloc(sizeof(*s) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
-		return (0);
-	while (*s1)
-		s[i++] = *s1++;
-	while (*s2)
-		s[i++] = *s2++;
-	s[i] = 0;
-	return (s);
+		return (NULL);
+	dst = malloc(sizeof(*dst) * ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (dst == NULL)
+		return (NULL);
+	while (s1[x])
+	{
+		dst[x] = s1[x];
+		x++;
+	}
+	while (s2[y])
+	{
+		dst[x] = s2[y];
+		x++;
+		y++;
+	}
+	free(s1);
+	dst[x] = '\0';
+	return (dst);
 }
 
 /*
