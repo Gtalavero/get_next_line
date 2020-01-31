@@ -3,88 +3,35 @@
 ============== GNL TESTS =================
 ==========================================
 BUFFER_SIZE 2 :
-71c71
-< |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
----
-> |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
-125c125
-< |answer to life the universe and everything
----
-> |answer to life the universe and everythianswer to life the universe and everything
-158c158
-<     /        \
----
->     /        \    /        \
+No Diff
 BUFFER_SIZE 3 :
-71c71
-< |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
----
-> |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
-124,125c124,125
-< |answer to life the universe and everythin
-< |answer to life the universe and everything
----
-> |0Ç•„0Vanswer to life the universe and everythin
-> |answer to life the universe and everythinganswer to life the universe and everything
-158c158
-<     /        \
----
->     /        \    /        \
+No Diff
 BUFFER_SIZE 1 :
-71c71
-< |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
----
-> |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
-125c125
-< |answer to life the universe and everything
----
-> |answer to life the universe and everythianswer to life the universe and everything
-158c158
-<     /        \
----
->     /        \    /        \
+No Diff
 BUFFER_SIZE 42 :
-71c71
-< |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
----
-> |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
-124,125c124,126
-< |answer to life the universe and everythin
-< |answer to life the universe and everything
----
-> |0
-> ñÌ’Uanswer to life the universe and everythin
-> |answer to life the universe and everythinganswer to life the universe and everything
-158c159
-<     /        \
----
->     /        \    /        \
+No Diff
 BUFFER_SIZE 9999 :
-71c71
-< |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
----
-> |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
-124,125c124,125
-< |answer to life the universe and everythin
-< |answer to life the universe and everything
----
-> |)¸UvUanswer to life the universe and everythin
-> |answer to life the universe and everythinganswer to life the universe and everything
-158c158
-<     /        \
----
->     /        \    /        \
+No Diff
+
+==========================================
+=========== GNL BONUS TESTS ==============
+==========================================
+BUFFER_SIZE 2 :
+No Diff
+BUFFER_SIZE 3 :
+No Diff
+BUFFER_SIZE 1 :
+No Diff
+BUFFER_SIZE 42 :
+No Diff
+BUFFER_SIZE 9999 :
+No Diff
 
 ==========================================
 ============== HUGE TESTS ================
 ==========================================
 GNL :
-1061c1061
-< |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
----
-> |NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNnNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
-3984c3984
-< |RbvLEc4SI/JV+xdbcm6Zzy+qLPqlpRqbxDhTYZL8yvtOTaKL/shcw45cwHevoQBB
----
-> |RbvLEc4SI/JV+xdbcm6Zzy+qLPqlpRqbxDhTYZL8yvtOTaKL/shcw45cwHevoQBBRbvLEc4SI/JV+xdbcm6Zzy+qLPqlpRqbxDhTYZL8yvtOTaKL/shcw45cwHevoQBB
+No Diff
+GNL BONUS :
+No Diff
 

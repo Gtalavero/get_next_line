@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gtalaver <gtalaverodev@gmail.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 17:48:27 by gtalaver          #+#    #+#             */
-/*   Updated: 2020/01/31 19:09:27 by gtalaver         ###   ########.fr       */
+/*   Updated: 2020/01/31 19:13:42 by gtalaver         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 /*
 ** The get_next_line function reads a file and returns the line ending with a

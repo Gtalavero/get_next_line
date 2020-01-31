@@ -68,7 +68,7 @@
 |KKKKKKKKKKKKKKKKKKKKKKKKKKKKKk
 |LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLl
 |MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm
-|MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
+|NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNn
 
 Right number of lines
 
@@ -122,7 +122,7 @@ Right number of lines
 ==========================================
 
 |answer to life the universe and everythin
-|answer to life the universe and everythianswer to life the universe and everything
+|answer to life the universe and everything
 |answer to life the universe and everything-
 
 Right number of lines
@@ -155,7 +155,7 @@ OOOOOOOOOOOOOO
      |       _)
      |      |
      oooooooo
-    /        \    /        \
+    /        \
 
 Right number of lines
 
