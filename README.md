@@ -30,5 +30,5 @@ And run it:
 
 	./a.out
 
-[1]: https://www.42madrid.com/
+[1]: https://www.42madrid.com/ "42 Madrid"
 
