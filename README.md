@@ -2,7 +2,7 @@
 
 ![MARK](https://raw.githubusercontent.com/Gtalavero/get_next_line/master/assets/success115.PNG)
 
-"GNL" is a project at [42 school](1) that basically reads a file line by line, read from a file descriptor.
+"GNL" is a project at [42 school][1] that basically reads a file line by line, read from a file descriptor.
 
 **Note:** get_next_line returns -1, 0, 1 depending on wether an error has occurred, the reading has been completed or a line has been read respectively.
 
