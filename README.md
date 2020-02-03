@@ -26,7 +26,7 @@ Then, build the executable with:
 
 	gcc -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c
 
-**Note:** Forget the "'*'_bonus.'*'", are the same.
+**Note:** Forget the "_bonus", are the same.
 
 And run it:
 
