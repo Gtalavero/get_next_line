@@ -1,6 +1,6 @@
-![MARK](https://raw.githubusercontent.com/Gtalavero/get_next_line/master/assets/success115.PNG)
-
 # get_next_line
+
+![MARK](https://raw.githubusercontent.com/Gtalavero/get_next_line/master/assets/success115.PNG)
 
 "GNL" is a project at [42 school](1) that basically reads a file line by line, read from a file descriptor.
 
@@ -28,9 +28,7 @@ Then, build the executable with:
 
 And run it:
 
-`./a.out`
-
-
+	./a.out
 
 [1]: https://www.42madrid.com/
 
