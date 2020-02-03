@@ -18,5 +18,19 @@ First, clone the repo.
 
 	git clone https://github.com/Gtalavero/get_next_line
 
+I added a `main.c` that will read and print all the lines together of a `text.txt` file in the same directory. If you want to read by arguments, there is also commented code that does this.
+
+Then, build the executable with:
+
+	gcc -Wall -Wextra -Werror get_next_line.c get_next_line.h get_next_line_utils.c
+
+**Note:** Forget the *_bonus.*, are the same.
+
+And run it:
+
+`./a.out`
+
+
+
 [1]: https://www.42madrid.com/
 
