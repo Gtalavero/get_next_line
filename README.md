@@ -16,7 +16,7 @@ After finishing this project, you'll definitely learn some more about static var
 ### How do I use it
 First, clone the repo.
 
-	git clone https://github.com/r4meau/get_next_line
+	git clone https://github.com/Gtalavero/get_next_line
 
 [1]: https://www.42madrid.com/
 
