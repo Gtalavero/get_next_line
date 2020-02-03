@@ -4,6 +4,7 @@
 
 "GNL" is a project at [42 school][1] that basically reads a file line by line from a file descriptor.
 
+**You can read the subject in** [this link][2].
 get_next_line returns -1, 0, 1 depending on wether an error has occurred, the reading has been completed or a line has been read respectively.
 
 **Note:** There are so many easier methods of doing this using standar C functions, but the goal here is to be able to do it by using just our owns functions and only the standards `read`, `malloc` and `free`.
@@ -31,4 +32,5 @@ And run it:
 	./a.out
 
 [1]: https://www.42madrid.com/ "42 Madrid"
+[2]: https://github.com/Gtalavero/get_next_line/blob/master/assets/gnl.subject.pdf "GNL subject"
 
